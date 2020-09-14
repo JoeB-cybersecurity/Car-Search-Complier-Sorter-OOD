@@ -17,4 +17,6 @@ TO IMPORT JSOUP LIBRARY (REQUIRED OR IT WONT WORK), MAKE SURE TO ALSO DOWNLOAD J
 
 Then run scrapefirsttest - src - scrape - Central_Marketplace_Project.java
 
+To search for a listing, type in console then press enter once or twice (usrInput)
+
 Note : there is also a class called (ebayStats.java) which collects listings from ebay and calculates item number and average price of any item (prototype). 
