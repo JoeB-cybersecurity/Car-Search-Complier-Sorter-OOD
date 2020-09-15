@@ -11,12 +11,11 @@ NOTE: There are a ton of comments and "meaningful" variable names to help you th
 
 
 !!!IMPORTANT!!! TO INSTALL -
-IMPORT EXISTING WORKSPACE INTO ECLIPSE - SELECT CarSearchSortProgram.zip
 TO IMPORT JSOUP LIBRARY (REQUIRED OR IT WONT WORK), MAKE SURE TO ALSO DOWNLOAD JSOUP JAVA FILE,
-	//Right click on your project -> Properties -> Java Build Path -> Click on Add External Jar in Libraries -> Select Jsoup -> apply == Refresh project
+	//Right click on project -> Properties -> Java Build Path -> Click on Add External Jar in Libraries -> Select Jsoup -> apply == Refresh project
 
-Then run scrapefirsttest - src - scrape - Central_Marketplace_Project.java
+Then run src - scrape - Central_Marketplace_Project.java
 
-To search for a listing, type in console then press enter once or twice (usrInput)
+To search for a listing, type in console then press enter twice (usrInput)
 
 Note : there is also a class called (ebayStats.java) which collects listings from ebay and calculates item number and average price of any item (prototype). 
