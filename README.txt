@@ -9,8 +9,6 @@ You many use and modify this program in any way. I intended to implement this co
 
 NOTE: There are a ton of comments and "meaningful" variable names to help you through this code and how to play around with it. I've also made sure to label and separate each listing so it doesn't get mixed while testing and remove/disregard all null spaces (mabye should've used list/dynamic array here). Also a lot of it has been reused but only slightly modified eg. (if (pagesIdx >= 1)/if (pagesIdx >=2)) in order to get around URLs specifying page numbers. 
 
-Heres a google doc that contains a brief plan/layout of the intended development for this project (Progran Java Idea (WIP) v1), including required optimisation, maintenance and steps to release this program fully - https://docs.google.com/document/d/1h9xWMzJVkwrsXMna7-E_6BM--_S7pWFwNC7NbCKVy80/edit?usp=sharing. You can comment on this doc too :)
-
 
 !!!IMPORTANT!!! TO INSTALL -
 TO IMPORT JSOUP LIBRARY (REQUIRED OR IT WONT WORK), MAKE SURE TO ALSO DOWNLOAD JSOUP JAVA FILE,
