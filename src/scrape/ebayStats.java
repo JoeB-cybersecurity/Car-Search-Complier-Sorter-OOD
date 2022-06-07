@@ -1,20 +1,28 @@
 package scrape;
 
-import org.jsoup.Jsoup; //TO IMPORT, GET JSOUP JAVA FILE FROM DOWNLOADS,
-//Right click on your project -> Properties -> Java Build Path ->
-//Click on Add External Jar in Libraries -> apply == Refresh project
+/* Must first import Jsoup.jar into referenced libraries 
+ * In Ecliplse - Right click project -> Properties -> Java Build Path -> 
+ * Click on Add External Jar in Libraries -> add libraries/jsoup.jar -> Apply
+ * 
+ * In Visual Studio Code - Navigate and expand Java Projects tab on left -> 
+ * Expand Referenced Libraries -> + Button -> add libraries/jsoup.jar 
+ * 
+ * Limitations of this project include not working on pages that load 
+ * using javascript (disable js and reload site to check what the script can see)
+ */
+
+import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-
 import java.util.*;  
 
-public class ebayStats { //works in theory, need to format
+public class ebayStats { 
 	
 public static void main(String[] args) throws Exception {
 	//3D dimensional array for storage (Origin Site) (item) (name, price, link, image, location/(Delivery))   --- items should be set to page limit 
-	 String Items [] [] [] = new String [3] [200] [5];       //ebay[0][][]   gumtree[1][][]   facebookMarket[2][][]    Amazon?  
-	 double PriceDouble [] [] = new double [4] [200];  //store prices copy
+	 String Items [] [] [] = new String [3] [2000] [5];       //ebay[0][][]   gumtree[1][][]   facebookMarket[2][][]    Amazon?  
+	 double PriceDouble [] [] = new double [4] [2000];  //store prices copy
 	 //NEED EXTRA ARRAY FOR SORRTING /s///
 	
 	//READING USER INPUT (SEARCHTYPE + URL)

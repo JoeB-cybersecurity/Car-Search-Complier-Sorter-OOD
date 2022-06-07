@@ -1,14 +1,23 @@
-package scrape; //DRAFT
-	import org.jsoup.Jsoup; //TO IMPORT, GET JSOUP JAVA FILE FROM DOWNLOADS,
-	//Right click on your project -> Properties -> Java Build Path ->
-	//Click on Add External Jar in Libraries -> apply == Refresh project
-	import org.jsoup.nodes.Document;
-	import org.jsoup.nodes.Element;
-	import org.jsoup.select.Elements;
-	
-	import java.util.*;  
+package scrape;
 
-	public class Central_Marketplace_Project { //works in theory, need to format
+/* Must first import Jsoup.jar into referenced libraries 
+ * In Ecliplse - Right click project -> Properties -> Java Build Path -> 
+ * Click on Add External Jar in Libraries -> add libraries/jsoup.jar -> Apply
+ * 
+ * In Visual Studio Code - Navigate and expand Java Projects tab on left -> 
+ * Expand Referenced Libraries -> + Button -> add libraries/jsoup.jar 
+ * 
+ * Limitations of this project include not working on pages that load 
+ * using javascript (disable js and reload site to check what the script can see)
+ */
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+import java.util.*;  
+
+	public class Central_Marketplace_Project { 
 		
 	public static void main(String[] args) throws Exception {
 		//Global Variables
