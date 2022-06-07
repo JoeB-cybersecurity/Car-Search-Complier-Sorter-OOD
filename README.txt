@@ -12,7 +12,7 @@ This file works by manipulating the URL that the page uses to load results and s
 
 
 Fixes required: 
-This program could use a lot of optimisation and fixes including but no limited to
+This program could use a lot of optimisation and fixes including but not limited to
 -Using functions to organise code, replace reused code 
 -Using a better way to store items in arrays? Such as removing some arrays that arn't needed 
 -Removing unused/commented out code
