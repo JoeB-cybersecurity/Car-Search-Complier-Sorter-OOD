@@ -1,4 +1,4 @@
-(OUT OF DATE!!!) This is my car search web scraper project, built using the java language and jsoup module. Limitations of this project include not working on pages that load using javascript. There are 3 files including:
+(FIXED! Woohoo!) This is my car search web scraper project, built using the java language and jsoup module. Limitations of this project include not working on pages that load using javascript. There are 3 files including:
 
 -Central_Marketplace_Project: Scrapes listings on ebay, carsales and gumtree specified by user input. Only searches for cars and vehicles. Returns the title, price, URL link and img link for each individual result it finds, as well as the site it found the listing on. Can sort these results by lowest or by best match. 
 
@@ -13,9 +13,8 @@ This file works by manipulating the URL that the page uses to load results and s
 
 Fixes required: 
 This program could use a lot of optimisation and fixes including but not limited to
--Using functions to organise code, replace reused code 
--Using a better way to store items in arrays? Such as removing some arrays that arn't needed 
+-Using functions to organise and replaced reused code 
+-Using a better method to store items in arrays. Such as removing some arrays that arn't needed, consolidating arrays or exporting to external csv or file
 -Removing unused/commented out code
 -Workaround dynamic page loading (such as gumtree using "hidden" tags) 
--Workaround on pages that load using javascript.
--Carsales currently doesn't work because of StringIndexOutOfBoundsException on line 401 and Exception in thread "main" org.jsoup.HttpStatusException: HTTP error fetching URL Status=403 on line 391 (Forbidden request)
+-Workaround on pages that load using javascript
