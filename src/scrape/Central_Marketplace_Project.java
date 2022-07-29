@@ -359,22 +359,22 @@ import java.util.*;
 	    	formatState = "New+South+Wales";
 	    }
 	    if (state.equalsIgnoreCase("act")) {
-	    	postcode = "ACT";
+	    	formatState = "ACT";
 	    }
   	    if (state.equalsIgnoreCase("vic")) {
-	    	postcode = "Victoria";
+	    	formatState = "Victoria";
 	    }
  		if (state.equalsIgnoreCase("qld")) {
-	    	postcode = "Queensland";
+	    	formatState = "Queensland";
 	    }
  		if (state.equalsIgnoreCase("sa")) {
-	    	postcode = "South+Australia";
+	    	formatState = "South+Australia";
 	    }
  		if (state.equalsIgnoreCase("wa")) {
-	    	postcode = "Western+Australia";
+	    	formatState = "Western+Australia";
 	    }
  		if (state.equalsIgnoreCase("tas")) {
-  	    	postcode = "Tasmania";
+			formatState = "Tasmania";
   	    }
  		if (state.equalsIgnoreCase("nt")) {
   	    	postcode = "Northern+Territory";
