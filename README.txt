@@ -18,4 +18,4 @@ This program could use a lot of optimisation and fixes including but not limited
 -Removing unused/commented out code
 -Workaround dynamic page loading (such as gumtree using "hidden" tags) 
 -Workaround on pages that load using javascript.
--Carsales currently doesn't work (7/6/22) StringIndexOutOfBoundsException, scrape.Central_Marketplace_Project.main(Central_Marketplace_Project.java:401)
+-Carsales currently doesn't work because of StringIndexOutOfBoundsException on line 401 and Exception in thread "main" org.jsoup.HttpStatusException: HTTP error fetching URL Status=403 on line 391 (Forbidden request)
