@@ -23,7 +23,7 @@ import java.util.*;
 		
 	public static void main(String[] args) throws Exception {
 		//Global Variables
-		int pagesIdx = 1; //CHOOSE NUMBER PAGES LOADED
+		int pagesIdx = 2; //CHOOSE NUMBER PAGES LOADED
 		int noItems = pagesIdx * 150;  //max stored number of items for a site (relient on pagesIdx)
 		
 		String state = "nsw";  //CHOOSE STATE (nsw ect.)
@@ -414,7 +414,7 @@ import java.util.*;
 	   for (Element bprice : bEprices) {
 
 		//Updated find price substring value
-		   Items[2][bi][1] = bprice.html().substring(bprice.html().indexOf(">") + 1, bprice.html().indexOf("*<")); //find price
+		   Items[2][bi][1] = bprice.html().substring(bprice.html().indexOf(">$") + 1, bprice.html().indexOf("*<")); //find price
 		   //formatting price (,/*)
 		   if (Items[2][bi][1].contains(",") || Items[2][bi][1].contains("*")) {
 			   Items[2][bi][1] = Items[2][bi][1].replaceAll(",","");
@@ -450,7 +450,13 @@ import java.util.*;
 				 //12 items == Approx 1 page (Increment 12 for 1 page) 
 				 
 			 String burl = "https://www.carsales.com.au/cars/?q=(And.Service.carsales._.CarAll.keyword(" + usrInput + ")._.State." + formatState + ".)" + bsort + "&offset=" + z;
-			    Document bdocument = Jsoup.connect(burl).get();
+				Connection connection = Jsoup.connect(burl);
+			 	connection.header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8");
+			 	connection.header("Accept-Encoding", "gzip, deflate, sdch");
+			 	connection.header("Accept-Language", "zh-CN,zh;q=0.8");
+			 	connection.header("User-Agent", "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36");
+	 
+			 Document bdocument = connection.get();
 			    System.out.println(burl);
 			    
 			    //set items SHOULD BE CONSISTANT 
@@ -460,8 +466,8 @@ import java.util.*;
 			    Elements bEimages = bdocument.select(".carousel-item.active");
 			    
 			   for (Element bprice : bEprices) {
-				   Items[2][bi][1] = bprice.html().substring(bprice.html().indexOf(">") + 1, bprice.html().indexOf("*<")); //find price
-				   //formatting price (,/*)
+				Items[2][bi][1] = bprice.html().substring(bprice.html().indexOf(">$") + 1, bprice.html().indexOf("*<")); //find price
+		   		//formatting price (,/*)
 				   if (Items[2][bi][1].contains(",") || Items[2][bi][1].contains("*")) {
 					   Items[2][bi][1] = Items[2][bi][1].replaceAll(",","");
 					   Items[2][bi][1] = Items[2][bi][1].replaceAll("\\*","");
