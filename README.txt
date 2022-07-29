@@ -13,7 +13,7 @@ This file works by manipulating the URL that the page uses to load results and s
 
 Fixes required: 
 This program could use a lot of optimisation and fixes including but not limited to
--Some queries don't work as well as others? (eg. ford falcon has stringIndexOutOfBoundsException vs honda civic which works perfectly) - may be due amount of search results? Quick fix is to set pagesIdx = 1
+-Some queries don't work as well as others? (eg. ford falcon has stringIndexOutOfBoundsException vs honda civic which works perfectly) - Caused by improper string concatination of the URL for carsales. Quick fix is to set pagesIdx = 1
 -Sorting might contain some errors for formatted item price 
 -Using functions to organise and replaced reused code 
 -Using a better method to store items in arrays. Such as removing some arrays that arn't needed, consolidating arrays or exporting to external csv or file
