@@ -15,6 +15,8 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+
+import org.jsoup.Connection;
 import java.util.*;  
 
 	public class Central_Marketplace_Project { 
@@ -388,7 +390,19 @@ import java.util.*;
 		   
 		 if (pagesIdx >= 1) {  
 	    String burl = "https://www.carsales.com.au/cars/?q=(And.Service.carsales._.CarAll.keyword(" + usrInput + ")._.State." + formatState + ".)" + bsort;
-	    Document bdocument = Jsoup.connect(burl).get();
+	    //Document bdocument = Jsoup.connect(burl).get();
+		
+		//Setting header information for our connection request to simulate a normal browser session 
+		//Avoids HTML 403 Forbidden errors
+		//https://blog.krybot.com/a?ID=00600-e57e6687-2221-4d74-8f43-8033cd819961
+		Connection connection = Jsoup.connect(burl);
+		connection.header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8");
+		connection.header("Accept-Encoding", "gzip, deflate, sdch");
+		connection.header("Accept-Language", "zh-CN,zh;q=0.8");
+		connection.header("User-Agent", "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36");
+
+		Document bdocument = connection.get();
+
 	    System.out.println(burl);
 	    
 	    //set items SHOULD BE CONSISTANT 
@@ -396,9 +410,11 @@ import java.util.*;
 	    Elements bElinks = bdocument.select("a[href^=/cars/details/]");  //ONLY REFERENCE ONCE, does it x5 due to extra buttons
 	    Elements bEprices = bdocument.select(".price");
 	    Elements bEimages = bdocument.select(".carousel-item.active");
-	    
+
 	   for (Element bprice : bEprices) {
-		   Items[2][bi][1] = bprice.html().substring(bprice.html().indexOf(">") + 1, bprice.html().indexOf("<s")); //find price
+
+		//Updated find price substring value
+		   Items[2][bi][1] = bprice.html().substring(bprice.html().indexOf(">") + 1, bprice.html().indexOf("*<")); //find price
 		   //formatting price (,/*)
 		   if (Items[2][bi][1].contains(",") || Items[2][bi][1].contains("*")) {
 			   Items[2][bi][1] = Items[2][bi][1].replaceAll(",","");
@@ -444,7 +460,7 @@ import java.util.*;
 			    Elements bEimages = bdocument.select(".carousel-item.active");
 			    
 			   for (Element bprice : bEprices) {
-				   Items[2][bi][1] = bprice.html().substring(bprice.html().indexOf(">") + 1, bprice.html().indexOf("<s")); //find price
+				   Items[2][bi][1] = bprice.html().substring(bprice.html().indexOf(">") + 1, bprice.html().indexOf("*<")); //find price
 				   //formatting price (,/*)
 				   if (Items[2][bi][1].contains(",") || Items[2][bi][1].contains("*")) {
 					   Items[2][bi][1] = Items[2][bi][1].replaceAll(",","");
